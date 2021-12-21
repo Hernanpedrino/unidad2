@@ -9,6 +9,7 @@ import { RegistroComponent } from './pages/registro/registro.component';
 import { LoginComponent } from './pages/login/login.component';
 import { DetallesComponent } from './pages/detalles/detalles.component';
 import { CamposComponent } from './pages/login/campos/campos.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CamposComponent } from './pages/login/campos/campos.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

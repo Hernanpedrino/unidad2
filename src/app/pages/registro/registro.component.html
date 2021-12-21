@@ -1,28 +1,44 @@
+<h1 class="text-center mt-4">Formulario de registro</h1>
 <div class="container">
 
-    <form class="row g-3">
+    <form class="row g-3" [formGroup]="formRegistro" (ngSubmit)="registro()">
         <div class="col-md-6">
-          <label for="inputName" class="form-label">Nombre</label>
-          <input type="text" class="form-control">
+          <label for="inputName" class="form-label is-invalid">Nombre</label>
+          <input type="text" class="form-control" [class.is-invalid]="nombreInvalido" [class.is-valid]="nombreValido" formControlName="nombre">
+          <div class="invalid-feedback" *ngIf="nombreInvalido">
+            Por favor ingrese su nombre
+          </div>
         </div>
         <div class="col-md-6">
           <label for="inputApellido" class="form-label">Apellido</label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" formControlName="apellido" [class.is-invalid]="apellidoInvalido" [class.is-valid]="apellidoValido">
+          <div class="invalid-feedback" *ngIf="apellidoInvalido">
+            Por favor ingrese su apellido
+          </div>
         </div>
         <div class="col-md-6">
           <label for="inputTelefono" class="form-label">Telefono</label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" formControlName="telefono" [class.is-invalid]="telefonoInvalido" [class.is-valid]="telefonoValido">
+          <div class="invalid-feedback" *ngIf="telefonoInvalido">
+            Por favor ingrese su telefono
+          </div>
         </div>
         <div class="col-md-6">
           <label for="inputEmail" class="form-label">Email</label>
-          <input type="email" class="form-control">
+          <input type="email" class="form-control" formControlName="email" [class.is-invalid]="emailInvalido" [class.is-valid]="emailValido">
+          <div class="invalid-feedback" *ngIf="emailInvalido">
+            Por favor ingrese su email
+          </div>
         </div>
         <div class="col-md-6">
           <label for="inputPassword" class="form-label">Password</label>
-          <input type="password" class="form-control">
+          <input type="password" class="form-control" formControlName="password" [class.is-invalid]="passwordInvalido" [class.is-valid]="passwordValido">
+          <div class="invalid-feedback" *ngIf="passwordInvalido">
+            Por favor ingrese una contraseña entre 6 y 10 caracteres
+          </div>
         </div>
         <div class="col-12">
-          <button type="submit" class="btn btn-primary">Sign in</button>
+          <button type="submit" class="btn btn-primary" [disabled]="formRegistro.invalid">Registrarse</button>
         </div>
     </form>
 </div>
