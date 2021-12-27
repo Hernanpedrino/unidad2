@@ -10,6 +10,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { DetallesComponent } from './pages/detalles/detalles.component';
 import { CamposComponent } from './pages/login/campos/campos.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule
   ],
